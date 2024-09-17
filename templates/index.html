@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Server Sent Events with HTMX</title>
+  <script src="https://unpkg.com/htmx.org"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/sse.js"></script>
+</head>
+<body>
+<!--<div hx-sse="sse: messages" id="messages">-->
+<!--  &lt;!&ndash; SSE updates will appear here &ndash;&gt;-->
+<!--</div>-->
+<div hx-ext="sse" sse-connect="/events?stream=messages" sse-swap="message">
+  Contents of this box will be updated in real time
+  with every SSE message received from the chatroom.
+</div>
+</body>
+</html>
